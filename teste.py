@@ -1,18 +1,9 @@
-def genealogy(l1):
-    dic = {}
-    for i in l1:
-        if i[1] in dic:
-            dic[i[1]] = dic[i[1]] + [i[0]]
-        else:
-            dic[i[1]] = [i[0]]
-    
-    result = []
-    relation = ["sibling", "parent", "cousin","grandparent"]
-    for i in relation:
-        if i in dic.keys():
-            result.append((dic[i], i))
-        else:
-            continue
-    return result
+def append(number, number_list=[]):
+  number_list.append(number)
+  print(number_list)
+  return number_list
 
-print(genealogy([("Ana", "sibling"), ("Carlos", "parent"), ("Diana", "parent")]))
+# Below are 3 calls to the `append` function and their expected and actual outputs:
+append(5) # expecting: [5], actual: [5]
+append(7) # expecting: [7], actual: [5, 7]
+append(2) # expecting: [2], actual: [5, 7, 2]
