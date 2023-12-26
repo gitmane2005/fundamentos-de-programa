@@ -8,4 +8,4 @@ def shorten(suffixes, base):
                 return f"{n[:len(n) - len(str(int(base)**t)) +1]} {suffixes[t]}"
             t = t-1
     return number
-print(shorten(["B", "KiB", "MiB", "GiB", "TiB"], 1024)("0"))
+print(shorten(["B", "KiB", "MiB", "GiB", "TiB"], 1024)("120"))
