@@ -26,7 +26,7 @@ def change_direction(board, pos, corrent_headed):
     a = (board[pos[0]][pos[1]], corrent_headed)
     return change_dic[(board[pos[0]][pos[1]], corrent_headed)]
 
-def find_bigining(board) -> (tuple, "e"):
+def find_bigining(board) :
     possible_starts = {'E', 'N', 'W', 'S'}
     for lin in range(len(board)):
         for char in range(len(board[lin])):

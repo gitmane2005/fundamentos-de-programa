@@ -1,12 +1,15 @@
 def rearrange(l):
-    pos = []
-    neg = []
-    for x in l:
-        if x >= 0:
-            pos.append(x)
-        else:
-            neg.append(x)
+    return sorted(l, key=lambda x: check(l,x))
 
-    return neg+pos
+def check(l,x):
+    t = l.index(x)
+    l[t] = "a"
+    return (x > 0, t)
+print(rearrange([2,5,2,5]))
+"""def rearrange(l):
+    non_positive = [x for x in l if x <= 0]
+    positive = [x for x in l if x > 0]
 
-print(rearrange([12, 11, -13, -5, 6, -7, 5, -3, -6, 0]))
+    result = non_positive + positive
+    
+    return result"""
