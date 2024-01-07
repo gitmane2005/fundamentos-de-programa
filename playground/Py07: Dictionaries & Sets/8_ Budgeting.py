@@ -1,13 +1,6 @@
 def budgeting(budget, products, wishlist):
-    dream = budget
-    wishlist_list = []
-    for (key,number) in wishlist.items():
-        wishlist_list.append((key,number))
-        dream = dream - products[key]*number
-    if dream >= 0:
-        return wishlist
-    wishlist_list.sort(reverse= True,key= lambda x: products[x[0]])
-    
+    wishlist_list = sorted(wishlist.items(), key=lambda x: products[x[0]], reverse=True)
+
     for tup in wishlist_list:
         if products[tup[0]]* tup[1] < budget:
             budget -= products[tup[0]]* tup[1]
