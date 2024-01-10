@@ -5,8 +5,9 @@ def mail_merge(names, mail_template):
         for name in list_name:
             template = ((f_mail_template.read()).split()).copy()
             for word in template:
-                if word == "<name>":
-                    template[template.index(word)] = name
+                if "<name>" in word:
+                    s = template[template.index(word)][len(word)-1:]
+                    template[template.index(word)] = name + s
             result.append(" ".join(template))
     return result
 
