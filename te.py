@@ -1,3 +1,4 @@
-def abs(a,b):
-    return a*b
-print(abs(5,None))
+def f(x):
+    print(x)
+    return f(2*x)
+f(1)
